@@ -20,6 +20,8 @@ public class MemberService {
 
     /**
      * Create) 회원가입
+     * @param member 회원 가입할 Member 객체
+     * @return 가입 성공한 회원의 ID
      */
     public Long join(Member member){
         memberRepository.save(member);
