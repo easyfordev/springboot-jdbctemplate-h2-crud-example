@@ -20,9 +20,13 @@ import java.util.Optional;
 public class MemberRepositoryImpl implements MemberRepository {
     private final JdbcTemplate jdbcTemplate;
 
+//    public MemberRepositoryImpl(DataSource dataSource) {
+//        jdbcTemplate = new JdbcTemplate(dataSource);
+//    }
+    // DI 로 수정
     @Autowired
-    public MemberRepositoryImpl(DataSource dataSource) {
-        jdbcTemplate = new JdbcTemplate(dataSource);
+    public MemberRepositoryImpl(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
